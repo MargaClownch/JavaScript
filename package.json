@@ -2,7 +2,7 @@
   "name": "untitled",
   "version": "1.0.0",
   "description": "",
-  "main": "src/actividad1.js",
+  "main": "src/Actividades1/actividad1.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
