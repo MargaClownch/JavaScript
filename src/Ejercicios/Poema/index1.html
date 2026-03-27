@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Ejercicio 1 EVENTOS</title>
+    <script type="text/javascript">
+        window.onload = function() {
+            var enlace1 = document.getElementById("enlace_1");
+            enlace1.onclick = function() { muestraOculta(1); }
+            var enlace2 = document.getElementById("enlace_2");
+            enlace2.onclick = function() { muestraOculta(2); }
+            var enlace3 = document.getElementById("enlace_3");
+            enlace3.onclick = function() { muestraOculta(3); }
+            var tituloSaberMas = document.getElementsByTagName("h2")[0];
+            tituloSaberMas.onclick = function() {
+                crearBotones();
+            }
+        }
+        function muestraOculta(numero) {
+            var parrafo = document.getElementById("contenidos_" + numero);
+            var enlace = document.getElementById("enlace_" + numero);
+
+            if (parrafo.style.display == "" || parrafo.style.display == "block") {
+                parrafo.style.display = "none";
+                enlace.innerHTML = "Mostrar contenidos";
+            } else {
+                parrafo.style.display = "block";
+                enlace.innerHTML = "Ocultar contenidos";
+            }
+        }
+        function crearBotones() {
+            var divCaja = document.createElement("div");
+            var botonAutor = document.createElement("button");
+            botonAutor.innerHTML = "AUTOR";
+            botonAutor.onclick = function() {
+                var texto = document.createElement("p");
+                texto.innerHTML = "Antonio Machado";
+                document.body.appendChild(texto);
+            }
+            var botonObra = document.createElement("button");
+            botonObra.innerHTML = "OBRA";
+            botonObra.onclick = function() {
+                var texto = document.createElement("p");
+                texto.innerHTML = "Campos de Castilla";
+                document.body.appendChild(texto);
+            }
+            var botonAno = document.createElement("button");
+            botonAno.innerHTML = "AÑO DE PUBLICACIÓN";
+            botonAno.onclick = function() {
+                var texto = document.createElement("p");
+                texto.innerHTML = "1912";
+                document.body.appendChild(texto);
+            }
+            divCaja.appendChild(botonAutor);
+            divCaja.appendChild(botonObra);
+            divCaja.appendChild(botonAno);
+            document.body.appendChild(divCaja);
+        }
+    </script>
+</head>
+<body>
+<p id="contenidos_1">
+    Caminante, son tus huellas
+    el camino, y nada más;
+    caminante, no hay camino,
+    se hace camino al andar.
+</p>
+<a id="enlace_1" href="#">Ocultar contenidos</a>
+<br>
+
+<p id="contenidos_2">
+    Al andar se hace el camino,
+    y al volver la vista atrás
+    se ve la senda que nunca
+    se ha de volver a pisar.</p>
+<a id="enlace_2" href="#">Ocultar contenidos</a>
+<br>
+
+<p id="contenidos_3">Caminante no hay camino
+    sino estelas en la mar.</p>
+<a id="enlace_3" href="#">Ocultar contenidos</a>
+
+<h2>SABER MÁS</h2>
+
+</body>
+</html>
